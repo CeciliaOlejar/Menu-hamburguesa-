@@ -1,0 +1,92 @@
+/* Cambio de Menu de inicio a Menu Hamburgesa */
+@media (max-width: 660px) {
+    #btn-mobile {
+        display: block;
+    }
+    .imagenesmenu {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: auto;}
+    #menu {
+        position: absolute;
+        width: 100%;
+        top: 100px;
+        right: 0;
+        display: block;
+        background-color:#094A7D;
+        border-radius:0 0 20px 20px;
+        height: 0;
+        z-index: 1000;
+        transition: .6s;
+        visibility: hidden;
+        overflow-y: hidden;
+        text-align: center;
+    }
+
+    #nav.active #menu {
+        display: block;
+        visibility: visible;
+        height: calc(11vh - 10px);
+        overflow-y: auto;
+    }
+
+    #menu a {
+        padding: 1rem 0;
+        margin: 0.5rem;
+        font-size: xx-small;
+        transition: all 0.5s linear;
+        padding: 0.5rem;
+        border-radius: 5px ;
+        color: #fff;
+
+    }
+    .menu ul li a:hover{
+        background-color:#F9BA32 !important;}
+
+    .logomenu{
+        width: 65%;
+        height: auto;
+        padding-left: 2rem;
+    } 
+
+    #btn-mobile {
+        display: flex;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        cursor: pointer;
+        gap: .5rem;
+    }
+
+    #hambuguer {
+        border-top: 3px solid;
+        width: 20px;
+    }
+
+    #hambuguer::before, #hambuguer::after {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background-color: currentColor;
+        margin-top: 5px;
+        transition: .4s;
+        position: relative;
+    }
+
+    #nav.active #hambuguer {
+        border-top-color: transparent;
+    }
+
+    #nav.active #hambuguer::before {
+        transform: rotate(135deg);
+    }
+
+    #nav.active #hambuguer::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+}
